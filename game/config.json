@@ -1,0 +1,13 @@
+{
+    "game": {},
+    "map": {
+        "path": {
+            "1": "resource/rooms/room1.txt",
+            "2": "resource/rooms/room2.txt",
+            "3": "resource/rooms/room3.txt",
+            "4": "resource/rooms/room4.txt",
+            "5": "resource/rooms/room5.txt"
+        },
+        "unit": 30
+    }
+}
