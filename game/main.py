@@ -189,12 +189,6 @@ def maingame(config_path, autoplay,roomnumber):
         if (pg.time.get_ticks() - start22) >= 3000:
             code22 = True
         
-        # Check game times remain
-        if (pg.time.get_ticks() - start_time) >= 40000:
-            quit_flag = True
-            global survive
-            survive = True
-        
         # potion pop up
         if (pg.time.get_ticks() - start_time) >= 5000 and (pg.time.get_ticks() - start_time) <= 5010:
             redpotion = RedPotion((random.randint(1,38)*30, random.randint(2,24)*30))
@@ -220,6 +214,11 @@ def maingame(config_path, autoplay,roomnumber):
             bluepotion = BluePotion((random.randint(1,38)*30, random.randint(2,24)*30))
             bluepotion_group.add(bluepotion)
         
+        # Check game times remain
+        if (pg.time.get_ticks() - start_time) >= 40000:
+            quit_flag = True
+            global survive
+            survive = True
         
         pg.time.delay(5)
         pg.display.update()
@@ -228,11 +227,11 @@ def maingame(config_path, autoplay,roomnumber):
 def menu():
     
     #menu_pic
-    image = pg.image.load("C:/Users/User/Desktop/game/pictures/menu_pic.jpg")
+    image = pg.image.load("pictures/menu_pic.jpg")
     image = pg.transform.rotozoom(image,0.0,5/6)
     image.convert()
     
-    musicfile = "C:/Users/User/Desktop/game/gamemusic/childs_play_theme.mp3"
+    musicfile = "gamemusic/childs_play_theme.mp3"
     pg.mixer.music.load(musicfile)
     pg.mixer.music.play(-1)
     pg.mixer.music.set_volume(0.4)
@@ -267,7 +266,7 @@ def start():
     args = vars(parser.parse_args())
     andywin = 0
     
-    musicfile = "C:/Users/User/Desktop/game/gamemusic/zed_mart_massacre.mp3"
+    musicfile = "gamemusic/zed_mart_massacre.mp3"
     pg.mixer.music.load(musicfile)
     pg.mixer.music.play(-1,30)
     pg.mixer.music.set_volume(0.4)
@@ -285,11 +284,11 @@ def start():
     
     
 def endpage(andywin):
-    image = pg.image.load("C:/Users/User/Desktop/game/pictures/menu_pic.jpg") # andy survive
+    image = pg.image.load("pictures/menu_pic.jpg") # andy survive
     image = pg.transform.rotozoom(image,0.0,5/6)
     image.convert()
         
-    musicfile = "C:/Users/User/Desktop/game/gamemusic/friends_until_the_end.mp3"
+    musicfile = "gamemusic/friends_until_the_end.mp3"
     pg.mixer.music.load(musicfile)
     pg.mixer.music.play(-1,10)
     pg.mixer.music.set_volume(0.4)
@@ -325,7 +324,7 @@ def score(survive):
     global stop
     stop = True
     if survive == True:
-        image = pg.image.load("C:/Users/User/Desktop/game/pictures/andywin.png")
+        image = pg.image.load("pictures/andywin.png")
         image = pg.transform.rotozoom(image,0.0,1200/1435)
         image.convert()
         
@@ -341,7 +340,7 @@ def score(survive):
             
             pg.display.update()
     else: # survive = False
-        image = pg.image.load("C:/Users/User/Desktop/game/pictures/chuckywin.png") # chucky win
+        image = pg.image.load("pictures/chuckywin.png") # chucky win
         image = pg.transform.rotozoom(image,0.0,1200/1066)
         image.convert()
         

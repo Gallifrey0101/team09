@@ -155,7 +155,7 @@ class RedPotion(pg.sprite.Sprite):
     def __init__(self, initrect):
         super().__init__()
         
-        image = pg.image.load("C:/Users/User/Desktop/game/pictures/redpotion.png")
+        image = pg.image.load("pictures/redpotion.png")
         image = pg.transform.rotozoom(image,0.0,1/5)
         image.convert()
         self.image = image
@@ -167,7 +167,7 @@ class BluePotion(pg.sprite.Sprite):
     def __init__(self, initrect):
         super().__init__()
         
-        image = pg.image.load("C:/Users/User/Desktop/game/pictures/bluepotion.png")
+        image = pg.image.load("pictures/bluepotion.png")
         image = pg.transform.rotozoom(image,0.0,3/62)
         image.convert()
         self.image = image
@@ -243,17 +243,17 @@ class Game:
                     elif symbol == 'A':
                         mapunit[row*unit:row*unit+unit, col*unit:col*unit+unit, :] = 255
                         
-                        andyfig = "C:/Users/User/Desktop/game/pictures/andy-1.png"
-                        andyfig2 = "C:/Users/User/Desktop/game/pictures/andy-2.png"
-                        andyfig3 = "C:/Users/User/Desktop/game/pictures/andy-3.png"
+                        andyfig = "pictures/andy-1.png"
+                        andyfig2 = "pictures/andy-2.png"
+                        andyfig3 = "pictures/andy-3.png"
                         self.andy = Player(andyfig,andyfig2,andyfig3,27/169,(col*unit,row*unit))
                         
                     elif symbol == 'C':
                         mapunit[row*unit:row*unit+unit, col*unit:col*unit+unit, :] = 255
                         
-                        chuckyfig = "C:/Users/User/Desktop/game/pictures/chucky-1.png"
-                        chuckyfig2 = "C:/Users/User/Desktop/game/pictures/chucky-2.png"
-                        chuckyfig3 = "C:/Users/User/Desktop/game/pictures/chucky-3.png"
+                        chuckyfig = "pictures/chucky-1.png"
+                        chuckyfig2 = "pictures/chucky-2.png"
+                        chuckyfig3 = "pictures/chucky-3.png"
                         self.chucky = Player(chuckyfig,chuckyfig2,chuckyfig3,0.05,(col*unit,row*unit))
                         
                     elif symbol == 'B':
